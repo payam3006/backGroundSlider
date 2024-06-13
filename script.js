@@ -12,6 +12,12 @@ let mediaQueryCondition = window.matchMedia(
   `(min-aspect-ratio: ${aspectRatio})`
 );
 
+if (mediaQueryCondition.matches) {
+  document.getElementById("centerImg").style = "background-size: 200% auto;";
+} else {
+  document.getElementById("centerImg").style = "background-size: auto 200%;";
+}
+
 mediaQueryCondition.addEventListener("change", () => {
   if (mediaQueryCondition.matches) {
     document.getElementById("centerImg").style = "background-size: 200% auto;";
